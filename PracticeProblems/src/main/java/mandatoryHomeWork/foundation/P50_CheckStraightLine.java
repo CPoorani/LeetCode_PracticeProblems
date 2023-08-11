@@ -10,12 +10,14 @@ public class P50_CheckStraightLine {
 	 * Slope = (y3-y1) / (x3-x1) -- Between P1 and P3
 	 * (y2-y1)*(x3-x1) == (x2-x1)*(y3-y1)
 	 * 
+	 * Hint : referred to get the formula on how to calculate the slope and to handle arithmetic exception
 	 * Find the difference between P1 and P2 
-	 * 	For X, X2-X1
-	 * 	For Y, Y2-Y1
-	 * Iterate through the input elements
-	 * 		find the coordinates for the given i
-	 * 		Multiply ==> (y2-y1)*(x3-x1) != (x2-x1)*(y3-y1)
+	 * 		Difference of X and Difference of Y
+	 * 		For X, X2-X1
+	 * 		For Y, Y2-Y1
+	 * Iterate through the input elements length to compare the first with the third, forth and so or the adjacent ones
+	 * 		Find the coordinates for the given i
+	 * 		Multiply ==> DifferenceOfY*(x3-x1) != DifferenceOfX*(y3-y1)
 	 * 			return false
 	 * else
 	 * 			return true

@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +19,7 @@ public class Formula1_CheckPosition {
 	public void checkPosition() {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.formula1.com/");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
 		driver.switchTo().frame("sp_message_iframe_834698");
 		driver.findElement(By.xpath("//button[text()='ACCEPT ALL']")).click();

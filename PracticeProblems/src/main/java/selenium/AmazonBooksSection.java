@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -19,7 +20,7 @@ public class AmazonBooksSection {
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		WebElement all = driver.findElement(By.id("searchDropdownBox"));
 		all.sendKeys("Books");
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Atomic Habits");

@@ -1,5 +1,6 @@
 package selenium;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,9 +17,9 @@ public class Salesforce {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://login.salesforce.com");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.findElement(By.id("username")).sendKeys("hari.radhakrishnan@qeagle.com");
-		driver.findElement(By.id("password")).sendKeys("Leaf$1234");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.findElement(By.cssSelector("input.username")).sendKeys("hari.radhakrishnan@qeagle.com");
+		driver.findElement(By.cssSelector("input.password")).sendKeys("Leaf$1234");
 		driver.findElement(By.id("Login")).click();
 
 		WebElement hamburgerMenu = driver.findElement(By.xpath("//div[@role = 'navigation']/button"));

@@ -9,7 +9,7 @@ public class P51_SumMultiples {
 	 * Input : Int
 	 * Output : Int
 	 * Initialize a variable sum with 0
-	 * Iterate through the elements of given n
+	 * Iterate through the elements of given n (1 to n)
 	 * 		if(i%3 ==0) || (i%5 ==0) || (i%7 ==0)
 	 * 			Add the sum along with i
 	 * Return sum

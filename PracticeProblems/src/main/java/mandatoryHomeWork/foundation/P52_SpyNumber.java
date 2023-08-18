@@ -38,19 +38,6 @@ public class P52_SpyNumber {
 		boolean actual = spyNumberCheck(-1124);
 		Assert.assertEquals(false, actual);
 	}
-
-	public boolean isSpyNumber(int num) {
-		String numbers = String.valueOf(num);
-		int sum = 0;
-		int product = 1;
-		for (int i = 0; i < numbers.length(); i++) {
-			int digit = Character.getNumericValue(numbers.charAt(i));
-			sum += digit;
-			product *= digit;
-		}
-		return sum == product;
-
-	}
 	
 	public boolean spyNumberCheck(int num)
 	{
@@ -66,6 +53,19 @@ public class P52_SpyNumber {
 		}
 		
 		return sum == product;
+	}
+	
+	public boolean isSpyNumber(int num) {
+		String numbers = String.valueOf(num);
+		int sum = 0;
+		int product = 1;
+		for (int i = 0; i < numbers.length(); i++) {
+			int digit = Character.getNumericValue(numbers.charAt(i));
+			sum += digit;
+			product *= digit;
+		}
+		return sum == product;
+
 	}
 
 }

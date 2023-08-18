@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Test;
 
 public class P42_SelfDivingNumbers {
 	/*
@@ -19,9 +20,16 @@ public class P42_SelfDivingNumbers {
 	 * 	If true, add it to list.
 	 */
 
+	@Test
 	public void test() {
 		List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22);
-		Assert.assertEquals(0, 0);
+		Assert.assertEquals(expected, selfDivisible(1, 22));
+	}
+
+	@Test
+	public void test1() {
+		List<Integer> expected = Arrays.asList(48, 55, 66, 77);
+		Assert.assertEquals(expected, isDivisible(47, 85));
 	}
 
 	// 18/08/2023

@@ -9,8 +9,9 @@ public class P55_PlaceFlowers {
 	 * https://leetcode.com/problems/can-place-flowers/description/
 	 * 1 0 0 0 1 -- n=1 => 1 0 1 0 1
 	 * 1 0 0 0 1 -- n=2 => Cannot place two flowers => false
-	 * 0 0 1 1 -- n=1 => 1 0 1 1 
+	 * 0 0 1 0-- n=1 => 1 0 1 0
 	 * 1 0 0 0 -- n=1 => 1 0 1 0 
+	 * 1 0 0 0 0 1 -- n=2 => 1 0 1 0 0 1 (false)
 	 * 
 	 * Input : Array and Int
 	 * Output : Boolean

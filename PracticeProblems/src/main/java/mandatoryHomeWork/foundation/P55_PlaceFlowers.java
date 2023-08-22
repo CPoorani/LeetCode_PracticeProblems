@@ -15,7 +15,6 @@ public class P55_PlaceFlowers {
 	 * 
 	 * Input : Array and Int
 	 * Output : Boolean
-	 * Initialize a counter variable to 0
 	 * Have a flag variable and initialize it to false
 	 * Iterate through the given input array
 	 * 	If the position of i, has 0, then proceed with further steps
@@ -23,8 +22,8 @@ public class P55_PlaceFlowers {
 	 * 		a) To check i-1 == 1
 	 * 		b) to check i+1 == 1
 	 * If the above conditions return true
-	 * Increase the counter 
-	 * if counter>=n, then return true else false
+	 * Decrease the n value
+	 * if n<=0, then return true else false
 	 */
 	
 	@Test

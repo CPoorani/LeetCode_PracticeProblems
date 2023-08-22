@@ -66,10 +66,6 @@ public class P55_PlaceFlowers {
 		                n--;
 		                
 		            }
-		            if(n==0)
-		            {
-		            	break;
-		            }
 		        }
 		    }
 		    

@@ -36,10 +36,30 @@ public class P59_AssignCookies {
 
 	@Test
 	public void test2() {
-		Assert.assertEquals(2, findContentChildren(new int[] { 5, 9, 8 }, new int[] { 0, 3, 9, 8 }));
+		Assert.assertEquals(2, ContentChildren(new int[] { 5, 9, 8 }, new int[] { 0, 3, 9, 8 }));
 	}
-
+	
 	public int findContentChildren(int[] g, int[] s) {
+		int maxNum = 0;
+		for (int i = 0; i < g.length; i++) {
+			int current = g[i];
+			int index = -1;
+			for (int j = 0; j < s.length; j++) {
+				if (s[j] >= current && (index == -1 || s[j] < s[index])) {
+					index = j;
+				}
+			}
+			if (index != -1) {
+				maxNum++;
+				index = -1; // reset the index
+			}
+
+		}
+		return maxNum;
+	}
+	
+	
+	public int ContentChildren(int[] g, int[] s) {
 		Arrays.sort(g);
 		Arrays.sort(s); 
 
@@ -60,15 +80,4 @@ public class P59_AssignCookies {
 		return maxNum;
 	}
 
-	public int findContentChildren1(int[] g, int[] s) {
-		int maxNum = 0;
-		boolean[] used = new boolean[s.length];
-
-		for (int i = 0; i < g.length; i++) {
-			int currentChild = g[i];
-			int cookie = Integer.MAX_VALUE;
-			int index = -1;
-		}
-		return maxNum;
-	}
 }

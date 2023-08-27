@@ -39,6 +39,14 @@ public class P59_AssignCookies {
 		Assert.assertEquals(2, ContentChildren(new int[] { 5, 9, 8 }, new int[] { 0, 3, 9, 8 }));
 	}
 	
+	/*
+	 * Outer loop to iterate through g and inner loop for s
+	 * Initialize a variable maxNum to 0 and index to -1
+	 * Initialize a variable current to g[i]
+	 * Index to hold the value of j, if the condition s[j] > current, then change the index to j
+	 * If the index is not equal to -1, then increment the value of maxNum
+	 */
+	
 	public int findContentChildren(int[] g, int[] s) {
 		int maxNum = 0;
 		for (int i = 0; i < g.length; i++) {

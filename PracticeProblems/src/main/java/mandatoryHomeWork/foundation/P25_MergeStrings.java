@@ -27,7 +27,7 @@ public class P25_MergeStrings {
 
 	@Test
 	public void test1() {
-		String actual = isMerged("ab", "pqrs");
+		String actual = mergeAlternately("ab", "pqrs");
 		Assert.assertEquals("apbqrs", actual);
 	}
 	
@@ -36,7 +36,29 @@ public class P25_MergeStrings {
 		String actual = isMerged("abcd", "pq");
 		Assert.assertEquals("apbqcd", actual);
 	}
+	
 
+	//29-08-2023
+	public String mergeAlternately(String word1, String word2) {
+
+		int l1 = word1.length();
+		int l2 = word2.length();
+		int i = 0;
+		int j = 0;
+		StringBuilder temp = new StringBuilder();
+		while (i < l1 && j < l2) {
+			temp.append(word1.charAt(i)).append(word2.charAt(j));
+			i++;
+			j++;
+		}
+
+		temp.append(word1.substring(i)).append(word2.substring(j));
+
+		System.out.println(temp);
+
+		return temp.toString();
+	}
+	
 	public String isMerged(String words1, String words2) {
 		String temp = "";
 		int l1 = words1.length();
@@ -64,4 +86,5 @@ public class P25_MergeStrings {
 		return temp;
 
 	}
-}
+	}
+	

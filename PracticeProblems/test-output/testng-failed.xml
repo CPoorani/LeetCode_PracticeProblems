@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="selenium.Formula1_CheckPosition">
+      <class name="mandatoryHomeWork.foundation.SelfDivingNumbers">
         <methods>
-          <include name="checkPosition"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- selenium.Formula1_CheckPosition -->
+      </class> <!-- mandatoryHomeWork.foundation.SelfDivingNumbers -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

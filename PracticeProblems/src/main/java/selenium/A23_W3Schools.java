@@ -24,7 +24,6 @@ public class A23_W3Schools {
 			System.out.println("Verified");
 		}
 		
-		String S = "";
 		
 		driver.quit();
 	}

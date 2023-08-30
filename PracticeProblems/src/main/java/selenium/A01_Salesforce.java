@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class A16_Salesforce {
+public class A01_Salesforce {
 
 	@Test
 	public void salesforceAccountCreation() {
@@ -18,8 +18,8 @@ public class A16_Salesforce {
 		driver.get("https://login.salesforce.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.cssSelector("input.username")).sendKeys("hari.radhakrishnan@qeagle.com");
-		driver.findElement(By.cssSelector("input.password")).sendKeys("Leaf$1234");
+		driver.findElement(By.cssSelector("input.username")).sendKeys("pooranimenon5@gmail.com");
+		driver.findElement(By.cssSelector("input.password")).sendKeys("Totest@123");
 		driver.findElement(By.id("Login")).click();
 
 		WebElement hamburgerMenu = driver.findElement(By.xpath("//div[@role = 'navigation']/button"));

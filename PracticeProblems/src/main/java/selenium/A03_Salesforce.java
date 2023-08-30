@@ -11,15 +11,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import junit.framework.Assert;
 
-public class A22_Salesforce {
+public class A03_Salesforce {
 
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://login.salesforce.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-		driver.findElement(By.cssSelector("input.username")).sendKeys("hari.radhakrishnan@qeagle.com");
-		driver.findElement(By.cssSelector("input.password")).sendKeys("Leaf$1234");
+		driver.findElement(By.cssSelector("input.username")).sendKeys("pooranimenon5@gmail.com");
+		driver.findElement(By.cssSelector("input.password")).sendKeys("Totest@123");
 		driver.findElement(By.id("Login")).click();
 
 		WebElement hamburgerMenu = driver.findElement(By.xpath("//div[@role = 'navigation']/button"));

@@ -18,16 +18,15 @@ public class OddIndexMatrix {
 	 */
 
 	public static void main(String[] args) {
-		int[][] mat = { { 1, 2 }, { 5, 6 } };
+		int[][] mat = { { 1, 2, 3}, { 4, 5, 6 }, {7, 8, 9}};
 		int[] resultArray = printMatrix(mat, mat.length);
 		for (int num : resultArray) {
-			System.out.print(num); // 1265
+			System.out.print(num); // 123654789
 		}
 	}
 
 	static int[] printMatrix(int mat[][], int n) {
 		List<Integer> k = new ArrayList<>();
-		int index = 0;
 
 		for (int i = 0; i < n; i++) {
 			if (i % 2 == 0) {

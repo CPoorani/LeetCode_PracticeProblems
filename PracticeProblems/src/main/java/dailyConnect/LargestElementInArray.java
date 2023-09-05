@@ -23,29 +23,29 @@ public class LargestElementInArray {
 	
 	@Test
 	public void test1() {
-        int[] arr = {15};
+        int[] arr = {};
         int expected = largestElement(arr);
-        Assert.assertEquals(1, expected);
+        Assert.assertEquals(-1, expected);
     }
 	
 	public int largestElement(int[] arr) {
-		int max = arr[0];
-
-		if (arr.length == 0) {
-			return -1;
-		}
-
+		
 		if (arr.length == 1) {
 			return arr[0];
 		}
 
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] > max) {
-				max = arr[i];
-			}
-		}
+		if (arr.length == 0) {
+	        return -1; 
+	    }
+		
+		int max = arr[0];
 
-		return max;
+	    for (int i = 1; i < arr.length; i++) {
+	        if (arr[i] > max) {
+	            max = arr[i];
+	        }
+	    }
+
+	    return max;
 	}
-
 }

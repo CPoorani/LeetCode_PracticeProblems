@@ -16,36 +16,36 @@ public class LargestElementInArray {
 	
 	@Test
 	public void test() {
-        int[] arr = {4, 7, 8, 6, 7, 6};
-        int expected = largestElement(arr);
-        Assert.assertEquals(8, expected);
-    }
-	
+		int[] arr = { 4, 7, 8, 6, 7, 6 };
+		int expected = largestElement(arr);
+		Assert.assertEquals(8, expected);
+	}
+
 	@Test
 	public void test1() {
-        int[] arr = {};
-        int expected = largestElement(arr);
-        Assert.assertEquals(-1, expected);
-    }
-	
+		int[] arr = {};
+		int expected = largestElement(arr);
+		Assert.assertEquals(-1, expected);
+	}
+
 	public int largestElement(int[] arr) {
-		
+
 		if (arr.length == 1) {
 			return arr[0];
 		}
 
 		if (arr.length == 0) {
-	        return -1; 
-	    }
-		
+			return -1;
+		}
+
 		int max = arr[0];
 
-	    for (int i = 1; i < arr.length; i++) {
-	        if (arr[i] > max) {
-	            max = arr[i];
-	        }
-	    }
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
 
-	    return max;
+		return max;
 	}
 }

@@ -32,18 +32,17 @@ public class MinimizeTheDifference {
 		int n = arr.length;
 
 		Arrays.sort(arr);
-		
-		int diffference = arr[n-1] - arr[0]; //4
 
-		 for (int i = 0; i < n; i++) { //need to correct to find min and max
-	            int currentMin = Math.min(arr[i] - k, 0);
-	            int currentMax = Math.max(arr[i] + k, 0);
-	            
-	     int diff = currentMax-currentMin;
-	     diffference = Math.min(diffference, diff);
+		int diffference = arr[n - 1] - arr[0]; // 4
 
-	
-	}
+		for (int i = 0; i < n; i++) { // need to correct to find min and max
+			int currentMin = Math.min(arr[i] - k, 0);
+			int currentMax = Math.max(arr[i] + k, 0);
+
+			int diff = currentMax - currentMin;
+			diffference = Math.min(diffference, diff);
+
+		}
 		return diffference;
+	}
 }
-} 

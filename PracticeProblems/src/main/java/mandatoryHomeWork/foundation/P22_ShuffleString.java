@@ -1,5 +1,8 @@
 package mandatoryHomeWork.foundation;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Test;
 
 import junit.framework.Assert;
@@ -28,6 +31,32 @@ public class P22_ShuffleString {
 		String actual = toShuffleString("abc", indices);
 		Assert.assertEquals("abc", actual);
 	}
+	
+	/*
+	 * 13/09
+	 * Input : String and indices array
+	 * Output : String
+	 * Create a map, iterate and get the indices along with the character
+	 * Traverse through the input string
+	 * 	For each of the index, get the value and add with the result string
+	 * Return the result
+	 */
+	 public String restoreString(String s, int[] indices) {
+    	 
+			Map<Integer, Character> map = new HashMap<Integer, Character>();
+			for(int i=0; i<s.length(); i++)
+			{
+				map.put(indices[i], s.charAt(i));
+			}
+			
+			String result = "";
+			for(int i=0;i <s.length(); i++)
+			{
+				result = result+ map.get(i);
+			}
+			return result;
+		        
+	        }
 
 	public String toShuffleString(String input, int[] indices) {
 		char[] temp = new char[indices.length];

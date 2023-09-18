@@ -1,6 +1,8 @@
 package dailyConnect;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -29,7 +31,7 @@ public class CommonElements {
 	public void test1() {
 		int[] arr1 = {4, 5, 9, 8, 2, 3, 17};
 		int[] arr2 = {2, 3, 5, 10, 11, 4, 17};
-		Assert.assertEquals(5, usingTwoPinter(arr1, arr2));
+		Assert.assertEquals(5, usingTwoPinter2(arr1, arr2));
 	}
 
 	public int maxCommonElements(int[] arr1, int[] arr2) {
@@ -46,36 +48,35 @@ public class CommonElements {
 	
 	/*
 	 * Create two pointers, pointer1 = 0, pointer2 = 0
-	 * Sort the arrays
-	 * Iterate till, pointer1 is lesser than array length and pointer2 is lesser than array length
-	 * If both the pointers are equal, increment the count and move to next element
+	 * Create an empty set and add the elements of arr1
+	 * If the set contains the elements from arr2, then increment the pointer 2
 	 * if arr1[pointer1] < arr2[pointer2], then increment pointer1 else increment pointer 2
 	 */
-	public int usingTwoPinter(int[] arr1, int[] arr2)
+	public int usingTwoPinter2(int[] arr1, int[] arr2)
 	{
-		Arrays.sort(arr1);
-		Arrays.sort(arr2);
-		int count = 0;
-		int pointer1 = 0;
-		int pointer2 = 0;
-		for(;pointer1<arr1.length && pointer2<arr2.length; )
-		{
-			if(arr1[pointer1] == arr2[pointer2] )
-			{
-				count++;
-				pointer1++;
-				pointer2++;
-			}
-			else if(arr1[pointer1] < arr2[pointer2])
-			{
-				pointer1++;
-			}
-			else
-			{
-				pointer2++;
-			}
-		}
-		return count;
-		
+		    int count = 0;
+	        int pointer1 = 0;
+	        int pointer2 = 0;
+
+	        Set<Integer> set = new HashSet<>();
+
+	        for (int num : arr1) {
+	            set.add(num);
+	        }
+
+	        while (pointer1 < arr1.length && pointer2 < arr2.length) {
+	            if (set.contains(arr2[pointer2])) {
+	                count++;
+	                pointer2++;
+	            } else if (arr1[pointer1] < arr2[pointer2]) {
+	                pointer1++;
+	            } else {
+	                pointer2++;
+	            }
+	        }
+
+	        return count;
+	    }
 	}
-}
+	
+	

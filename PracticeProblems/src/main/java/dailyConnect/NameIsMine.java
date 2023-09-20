@@ -55,23 +55,16 @@ public class NameIsMine {
 	
 	public String usingTwoPointer(String s, String t)
 	{
-		String[] split = s.split(" ");
-		String a = split[0];
-		String b = split[1];
-		int i=0, j=0;
+		int i = 0, j=0;
 		
-		for(;i<a.length() && j<b.length();)
+		for(;i<s.length() && j<t.length();)
 		{
-			if(a.charAt(i) == b.charAt(i))
+			if(s.charAt(i) == t.charAt(i))
 			{
 				i++;
-				j++;
 			}
-			else
-			{
-				j++;
-			}
+			j++;
 		}
-		return "YES";
+        return t.substring(j).contains(s.substring(i)) ? "YES" : "NO";
 	}
 }

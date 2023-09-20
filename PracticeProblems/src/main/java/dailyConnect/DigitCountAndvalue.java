@@ -38,9 +38,6 @@ public class DigitCountAndvalue {
 
 		    for (char digit : num.toCharArray()) {
 		        int value = digit - '0';
-		        if (value < 0 || value > 9) {
-		            return false; 
-		        }
 		        count[value]++;
 		    }
 

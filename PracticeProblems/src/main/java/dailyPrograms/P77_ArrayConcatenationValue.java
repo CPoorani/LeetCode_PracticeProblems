@@ -2,6 +2,9 @@ package dailyPrograms;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.Assert;
+import org.junit.Test;
+
 
 public class P77_ArrayConcatenationValue {
 
@@ -18,6 +21,21 @@ public class P77_ArrayConcatenationValue {
 	 * if the left and right are equal, add it along with the cv and return cv
 	 */
 	
+	@Test
+	public void test() {
+		Assert.assertEquals(596, findTheArrayConcVal(new int[] { 7, 52, 2, 4 }));
+	}
+
+	@Test
+	public void test2() {
+		Assert.assertEquals(7137, findTheArrayConcVal(new int[] { 7, 28, 109 }));
+	}
+
+	@Test
+	public void test1() {
+		Assert.assertEquals(26, findTheArrayConcVal(new int[] { 26 }));
+	}
+
 	public long findTheArrayConcVal(int[] nums) {
 
 		long cv = 0;

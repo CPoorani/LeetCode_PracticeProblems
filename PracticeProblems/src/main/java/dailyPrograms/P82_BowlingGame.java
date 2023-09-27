@@ -7,13 +7,13 @@ public class P82_BowlingGame {
 	
 	/*
 	 * player1 = [4,10,7,9], player2 = [6,5,2,3] Output: 1
-	 * Lengths are equal
-	 * First index as 10
-	 * Last index as 10
 	 * 
 	 * {5, 7, 7, 10} {10, 2, 3, 4}
 	 * {9, 9, 9, 9 } {10, 2, 3, 5}
 	 * {2} {2}
+	 * First index as 10
+	 * Last index as 10
+	 * Adjacent as 10
 	 * 
 	 * Initialize a boolean variable flag to keep in track of the 10
 	 * Initialize a variable score to 0
@@ -26,34 +26,43 @@ public class P82_BowlingGame {
 	 * if the player2 score is higher, return 2
 	 * else return 0
 	*/
-
-	@Test
-	public void test2() {
-		Assert.assertEquals(2, isWinner(new int[] { 5, 6, 1, 10 }, new int[] { 5, 1, 10, 5 }));
-	}
-
-	@Test
-	public void test1() {
-		Assert.assertEquals(1, isWinner(new int[] { 4, 10, 7, 9 }, new int[] { 6, 5, 2, 3 }));
-	}
-
 	@Test
 	public void test() {
-		Assert.assertEquals(0, isWinner(new int[] { 2 }, new int[] { 2 }));
+		Assert.assertEquals(1, isWinner(new int[] { 4,10,7,9 },
+				new int[] { 6,5,2,3 }));
 	}
 	
+	@Test
+	public void test1() {
+		Assert.assertEquals(1, isWinner(new int[] { 5, 3 },
+				new int[] { 4, 1}));
+	}
+	
+	@Test
+	public void test2() {
+		Assert.assertEquals(2, isWinner(new int[] { 7, 10, 2, 6, 8, 5, 4, 6, 10, 9, 1, 4, 3, 10, 0, 9, 6, 1, 0 },
+				new int[] { 2, 1, 9, 4, 5, 0, 6, 5, 6, 10, 10, 4, 8, 8, 6, 9, 2, 9, 5 }));
+	}
+	
+
 	public int checkScore(int[] player) {
 		int score = 0;
 		boolean flag = false;
+		int count = 0;
 
 		for (int i = 0; i < player.length; i++) {
 			if (flag) {
 				score += 2 * player[i];
+				count++;
+				if (count > 1) {
+					flag = false;
+					count = 0;
+				}
 			} else {
 				score += player[i];
 			}
 
-			if (player[i] == 10 && i < player.length - 2) {
+			if (player[i] == 10) {
 				flag = true;
 			}
 		}

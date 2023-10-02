@@ -1,11 +1,12 @@
 package mandatoryHomeWork.foundation;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class P49_DayOfYear {
+public class P49_DayOfYearAndWeek {
 	
 	/*
 	 * 2019-01-09 ==> Jan (01), directly return 9 
@@ -36,6 +37,35 @@ public class P49_DayOfYear {
 	@Test
 	public void test2() {
 		Assert.assertEquals(41, findDate("2019-02-10"));
+	}
+	
+	@Test
+	public void test3() {
+		Assert.assertEquals("Saturday", dayOfTheWeek(31, 8, 2019));
+	}
+	
+	@Test
+	public void test4() {
+		Assert.assertEquals("Wednesday", dayOfTheWeek(05, 9, 1990));
+	}
+	
+	
+	public String dayOfTheWeek(int day, int month, int year) {
+		String[] week = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+		int[] monthDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		int count = 0;
+		for (int i = 1971; i < year; i++) {
+			if (isLeapYear(i)) {
+				count = count + 366;
+			} else {
+				count = count + 365;
+			}
+		}
+		for (int i = 0; i < month - 1; i++) {
+			count += monthDays[i];
+		}
+		count += day;
+		return week[(count + 4) % 7];
 	}
 
 	public int findDate(String date) {

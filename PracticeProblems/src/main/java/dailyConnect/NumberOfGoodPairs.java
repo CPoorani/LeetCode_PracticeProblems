@@ -42,7 +42,7 @@ public class NumberOfGoodPairs {
 	
 	@Test
 	public void test2() {
-		Assert.assertEquals(0, IdenticalPairs(new int[] { 1, 2, 3, 4, 5 }));
+		Assert.assertEquals(0, numIdenticalPairs(new int[] { 1, 2, 3, 4, 5 }));
 	}
 
 	public int IdenticalPairs(int[] nums) {
